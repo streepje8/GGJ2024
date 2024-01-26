@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 859a89a84cab0da44a1629e9625711f6, type: 3}
-  m_Name: TestSet
+  m_Script: {fileID: 11500000, guid: baf46883876b5134bb26c5aeaf621959, type: 3}
+  m_Name: FunnyPrompts
   m_EditorClassIdentifier: 
-  <Funnies>k__BackingField:
-  - {fileID: 11400000, guid: 7ae0ddf51214dc94fa71f04ff2cdfc13, type: 2}
+  <Prompts>k__BackingField:
+  - Dit is een test prompt...
+  - Dit is een test prompt...2
+  - Dit is een test prompt...3
+  - Dit is een test prompt...4

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1266298191298022372}
   - component: {fileID: 1573282472795932894}
   - component: {fileID: 5555018414482773885}
+  - component: {fileID: 5846329806384667394}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -101,3 +102,16 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5846329806384667394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244859743813302480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1573b5a8aef67244bee5d699cfefd7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DefaultScreen>k__BackingField: main
