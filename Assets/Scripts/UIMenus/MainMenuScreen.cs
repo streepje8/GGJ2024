@@ -29,7 +29,7 @@ public class MainMenuScreen : MonoBehaviour
     public async Task HostAsync()
     {
         await networking.HostAsync();
-        await networking.ConnectToServerAsync("127.0.0.1:7777").ContinueWith(t =>
+        await networking.ConnectToServerAsync("127.0.0.1").ContinueWith(t =>
         {
             if (t.IsFaulted) throw t.Exception ?? new Exception("jldfhbglfjkgfsjhlg");
         });
