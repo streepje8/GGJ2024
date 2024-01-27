@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 2009033245}
   - component: {fileID: 2009033247}
   - component: {fileID: 2009033246}
+  - component: {fileID: 2009033248}
   m_Layer: 5
   m_Name: LoadingText
   m_TagString: Untagged
@@ -347,10 +348,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1299192652}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 800}
+  m_SizeDelta: {x: -400, y: -400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2009033246
 MonoBehaviour:
@@ -374,8 +375,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Loading...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f8df28bbe3d3a7489fb36401eb132b5, type: 2}
+  m_sharedMaterial: {fileID: 1683114983399523509, guid: 3f8df28bbe3d3a7489fb36401eb132b5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -399,7 +400,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 181.5
+  m_fontSize: 419.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -449,6 +450,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009033244}
   m_CullTransparentMesh: 1
+--- !u!114 &2009033248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009033244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e14f0c2b94bd2a46ba147f61c3bd7d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: main
 --- !u!1001 &1149320486292986617
 PrefabInstance:
   m_ObjectHideFlags: 0
