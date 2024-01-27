@@ -13,7 +13,7 @@ public class ActiveFunny : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [field: SerializeField]public bool IsSelected { get; private set; }
     [field: SerializeField]public bool InDrag { get; private set; }
     [field: SerializeField]public Vector2 DragStartDelta { get; private set; }
-    [field: SerializeField] public bool CanDrag { get; private set; } = false;
+    [field: SerializeField] public bool IsBeeingHovered { get; private set; } = false;
 
     private Image visual;
     private PersistentGameData data;
@@ -72,6 +72,11 @@ public class ActiveFunny : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     private void Update()
     {
+        if (IsBeeingHovered && Input.GetMouseButton(1))
+        {
+            SceneBuilder.SelectFunny(null);
+            Destroy(gameObject);
+        }
         if (InDrag)
         {
             if (!Input.GetMouseButton(0))
@@ -88,7 +93,7 @@ public class ActiveFunny : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             if (IsSelected && Input.GetMouseButton(0))
             {
-                if (CanDrag)
+                if (IsBeeingHovered)
                 {
                     InDrag = true;
                     RectTransformUtility.ScreenPointToLocalPointInRectangle(((RectTransform)canvas.transform), Input.mousePosition, cam, out Vector2 mouseCanvasPos);
@@ -112,11 +117,11 @@ public class ActiveFunny : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        CanDrag = true;
+        IsBeeingHovered = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        CanDrag = true;
+        IsBeeingHovered = true;
     }
 }
