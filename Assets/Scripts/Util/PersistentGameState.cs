@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -44,6 +43,17 @@ public class PersistentGameState : MonoBehaviour
         foreach (var persistentObject in persistantsSorted) persistentObject.Destroy();
     }
 
+    public static bool TryFindObject<T>(string ID, out T obj) where T : PersistentObject
+    {
+        if (instance.TryFindObjectLocal(ID, out PersistentObject value))
+        {
+            obj = (T)value;
+            return true;
+        }
+        obj = null;
+        return false;
+    }
+    
     public static bool TryFindObject(string ID, out PersistentObject obj)
     {
         if (instance.TryFindObjectLocal(ID, out PersistentObject value))
