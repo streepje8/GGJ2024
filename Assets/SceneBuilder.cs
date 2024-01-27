@@ -30,4 +30,25 @@ public class SceneBuilder : MonoBehaviour
     public void RotateRight() => SelectedFunny.RotateRight();
     public void ZoomIn() => SelectedFunny.ZoomIn();
     public void ZoomOut() => SelectedFunny.ZoomOut();
+
+    public void OpenDrawer()
+    {
+        
+    }
+
+    public void Next()
+    {
+        
+    }
+
+    public void Prev()
+    {
+        
+    }
+
+    public void Camera()
+    {
+        
+    }
+    
 }

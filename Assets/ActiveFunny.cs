@@ -6,6 +6,10 @@ public class ActiveFunny : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     [field: SerializeField] public Funny Funny { get; private set; }
     [field: SerializeField]public string FunnyName { get; private set; }
+    
+    [field: SerializeField] public bool IsSpeechBubble { get; private set; } = false;
+    
+    [field: Header("Modified by code")]
     [field: SerializeField]public bool IsSelected { get; private set; }
     [field: SerializeField]public bool InDrag { get; private set; }
     [field: SerializeField]public Vector2 DragStartDelta { get; private set; }
@@ -28,7 +32,8 @@ public class ActiveFunny : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void SetFunny(Funny funny)
     {
         Funny = funny;
-        FunnyName = funny.name;
+        FunnyName = funny.FunnyName;
+        IsSpeechBubble = funny.IsSpeechBubble;
         visual.sprite = funny.FunnyArt;
     }
 
@@ -72,7 +77,6 @@ public class ActiveFunny : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             if (!Input.GetMouseButton(0))
             {
                 InDrag = false;
-                Debug.Log("DragEnd");
             }
             else
             {
