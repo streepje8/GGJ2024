@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ServerListing : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class ServerListing : MonoBehaviour
         {
             if (t.IsFaulted) throw t.Exception ?? new Exception("jldfhbglfjkgfsjhlg");
         });
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
     
     public void UpdateListingText()
