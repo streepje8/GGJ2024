@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 // ReSharper disable Unity.NoNullPropagation
@@ -7,14 +8,15 @@ public class SceneBuilder : MonoBehaviour
     [field: SerializeField] public Transform FrameA { get; private set; }
     [field: SerializeField] public Transform FrameB { get; private set; }
     [field: SerializeField] public Transform FrameC { get; private set; }
+    [field: SerializeField] public Transform Drawer { get; private set; }
     [field: SerializeField] public TMP_Text FrameText { get; private set; }
     [field: SerializeField] public GameObject ActiveFunnyPrefab { get; private set; }
 
 
     [field: Header("Managed by code")]
-    [field: SerializeField]
-    public ActiveFunny SelectedFunny { get; private set; } = null;
-    public Transform ActiveFrame { get; private set; } = null;
+    [field: SerializeField] public ActiveFunny SelectedFunny { get; private set; } = null;
+    [field: SerializeField] public Transform ActiveFrame { get; private set; } = null;
+    [field: SerializeField] public bool DrawerState { get; private set; } = false;
     public int ActiveFrameIndex { get; private set; } = 0;
 
     private static SceneBuilder instance;
@@ -81,7 +83,12 @@ public class SceneBuilder : MonoBehaviour
 
     public void OpenDrawer()
     {
-        
+        DrawerState = true;
+    }
+
+    public void CloseDrawer()
+    {
+        DrawerState = false;
     }
 
     public void Next()
@@ -97,6 +104,12 @@ public class SceneBuilder : MonoBehaviour
     public void Camera()
     {
         
+    }
+    
+    private void Update()
+    {
+        Vector3 goalPosition = DrawerState ? Vector3.zero : Vector3.down * 1080;
+        Drawer.transform.localPosition = Vector3.Lerp(Drawer.transform.localPosition, goalPosition, 10f * Time.deltaTime);
     }
     
 }

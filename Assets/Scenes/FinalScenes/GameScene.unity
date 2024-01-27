@@ -377,6 +377,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1188590725122080083, guid: 8c8792356f572e94f8a2b65d68f0d972, type: 3}
       insertIndex: 0
+      addedObject: {fileID: 554125483}
+    - targetCorrespondingSourceObject: {fileID: 1188590725122080083, guid: 8c8792356f572e94f8a2b65d68f0d972, type: 3}
+      insertIndex: 1
       addedObject: {fileID: 6739805927366169102}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8792356f572e94f8a2b65d68f0d972, type: 3}
@@ -591,6 +594,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488821382}
   m_CullTransparentMesh: 1
+--- !u!1 &554125482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554125483}
+  - component: {fileID: 554125484}
+  m_Layer: 5
+  m_Name: Lobby
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &554125483
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554125482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 305125376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &554125484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554125482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e14f0c2b94bd2a46ba147f61c3bd7d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: main
 --- !u!1 &668915651
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +785,41 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 789628681}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1221612464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221612465}
+  m_Layer: 5
+  m_Name: Drawer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1221612465
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221612464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6739805927366169102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2991,6 +3078,7 @@ RectTransform:
   - {fileID: 433413132}
   - {fileID: 2118001251}
   - {fileID: 284879995889914344}
+  - {fileID: 1221612465}
   m_Father: {fileID: 305125376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3184,7 +3272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e14f0c2b94bd2a46ba147f61c3bd7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: main
+  <ID>k__BackingField: gamealive
 --- !u!114 &8033876761743682478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3200,9 +3288,12 @@ MonoBehaviour:
   <FrameA>k__BackingField: {fileID: 389853431}
   <FrameB>k__BackingField: {fileID: 2109530488}
   <FrameC>k__BackingField: {fileID: 911488691}
+  <Drawer>k__BackingField: {fileID: 1221612465}
   <FrameText>k__BackingField: {fileID: 1809893721}
   <ActiveFunnyPrefab>k__BackingField: {fileID: 2903501403939289663, guid: 8e797e6bb4de28f45a8493e08150bcbd, type: 3}
   <SelectedFunny>k__BackingField: {fileID: 0}
+  <ActiveFrame>k__BackingField: {fileID: 0}
+  <DrawerState>k__BackingField: 0
 --- !u!114 &8075238409636822413
 MonoBehaviour:
   m_ObjectHideFlags: 0
