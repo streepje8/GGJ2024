@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Lighter
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Lighter
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 736b5c6186f193845a38d6a0c599fab5, type: 3}

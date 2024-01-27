@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Balloon
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
+  <FunnyName>k__BackingField: Balloon
   <FunnyArt>k__BackingField: {fileID: 0}

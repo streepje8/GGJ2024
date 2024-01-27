@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Vat2
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Vat2
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 621323d9dd913634d9771d5e4c59a78c, type: 3}

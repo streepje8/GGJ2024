@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Dokter
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Dokter
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 313607635b7c81b43bb5af31bc1d3c5c, type: 3}

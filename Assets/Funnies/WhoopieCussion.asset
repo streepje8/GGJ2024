@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: WhoopieCussion
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: WhoopieCussion
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 24ff9def039da524ebb05947cd91a242, type: 3}

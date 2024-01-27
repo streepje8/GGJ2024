@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ToiletPaperRoll
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: ToiletPaper
+  <FunnyName>k__BackingField: ToiletPaperRoll
   <FunnyArt>k__BackingField: {fileID: 21300000, guid: 5aa1afac4c0468349b8761c84b1da9c6, type: 3}

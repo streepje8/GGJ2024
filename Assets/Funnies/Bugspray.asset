@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bugspray
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Bugspray
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 8008d32724d328b4a89c1a6c71cac403, type: 3}
