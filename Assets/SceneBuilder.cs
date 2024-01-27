@@ -1,4 +1,4 @@
-using System;
+using System.IO;
 using TMPro;
 using UnityEngine;
 // ReSharper disable Unity.NoNullPropagation
@@ -104,9 +104,42 @@ public class SceneBuilder : MonoBehaviour
         SetFrame(ActiveFrameIndex - 1);
     }
 
-    public void Camera()
+    public void CameraFunc()
     {
-        
+        RenderTexture rend = new RenderTexture(1920, 1080, 1);
+        SetFrame(0);
+        Camera.main.targetTexture = rend;
+        Camera.main.Render();
+        RenderTexture.active = rend;
+        Texture2D tex = new Texture2D(1358, 764, TextureFormat.RGB24, false);
+        tex.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
+        RenderTexture.active = null;
+        byte[] bytes;
+        bytes = tex.EncodeToPNG();
+        string path = Path.Combine(Application.persistentDataPath, "FrameA.png");
+        System.IO.File.WriteAllBytes(path, bytes);
+        SetFrame(1);
+        Camera.main.targetTexture = rend;
+        Camera.main.Render();
+        RenderTexture.active = rend;
+        tex = new Texture2D(1358, 764, TextureFormat.RGB24, false);
+        tex.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
+        RenderTexture.active = null;
+        bytes = tex.EncodeToPNG();
+        path = Path.Combine(Application.persistentDataPath, "FrameB.png");
+        System.IO.File.WriteAllBytes(path, bytes);
+        SetFrame(2);
+        Camera.main.targetTexture = rend;
+        Camera.main.Render();
+        RenderTexture.active = rend;
+        tex = new Texture2D(1358, 764, TextureFormat.RGB24, false);
+        tex.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
+        RenderTexture.active = null;
+        bytes = tex.EncodeToPNG();
+        path = Path.Combine(Application.persistentDataPath, "FrameC.png");
+        System.IO.File.WriteAllBytes(path, bytes);
+        rend.Release();
+        Camera.main.targetTexture = null;
     }
     
     private void Update()
