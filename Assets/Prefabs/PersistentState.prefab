@@ -93,6 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FunnySet>k__BackingField: {fileID: 11400000, guid: 534b7bb448ab49f4f844994a549e729a, type: 2}
   <FunnyPrompts>k__BackingField: {fileID: 11400000, guid: 6232ca99840a1c142891d6fa7a6f3420, type: 2}
+  <FunnyDefaultMaterial>k__BackingField: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  <FunnySelectedMaterial>k__BackingField: {fileID: 2100000, guid: c2e90a97bfff8794c9d8670262bfd012, type: 2}
 --- !u!1 &5012434948464779894
 GameObject:
   m_ObjectHideFlags: 0
