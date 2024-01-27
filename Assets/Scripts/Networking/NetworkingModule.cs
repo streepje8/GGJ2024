@@ -109,7 +109,7 @@ public class NetworkingModule : PersistentObject
     {
         int count = 0;
         isYoinking = true;
-        if(broadcastYoinker == null) broadcastYoinker = new UdpClient(7778);
+        if(broadcastYoinker == null) broadcastYoinker = new UdpClient(440);
 #pragma warning disable CS4014
         YoinkBroadcasts(broadcastYoinker, (bytesYoinked) =>
         {
@@ -159,7 +159,7 @@ public class NetworkingModule : PersistentObject
         networkMode = NetworkMode.Host;
         Server.Start(80, 5);
         ServerIsRunning = true;
-        if(broadcastYeeter == null) broadcastYeeter = new UdpClient(7779);
+        if(broadcastYeeter == null) broadcastYeeter = new UdpClient(21);
         if (!IsYeeting)
         {
             IsYeeting = true;
