@@ -24,12 +24,15 @@ public class SceneBuilder : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        ActiveFrame = FrameA;
+        ActiveFrameIndex = 0;
         FrameB.gameObject.SetActive(false);
         FrameC.gameObject.SetActive(false);
     }
 
     public void SetFrame(int frame)
     {
+        if (frame < 0) frame = 2;
         frame = frame % 3;
         FrameA.gameObject.SetActive(false);
         FrameB.gameObject.SetActive(false);
@@ -111,5 +114,6 @@ public class SceneBuilder : MonoBehaviour
         Vector3 goalPosition = DrawerState ? Vector3.zero : Vector3.down * 1080;
         Drawer.transform.localPosition = Vector3.Lerp(Drawer.transform.localPosition, goalPosition, 10f * Time.deltaTime);
     }
-    
+
+    public static void CloseDrawerStatic() => instance.CloseDrawer();
 }

@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: FunnySet
   m_EditorClassIdentifier: 
   <Funnies>k__BackingField:
-  - {fileID: 11400000, guid: 7ae0ddf51214dc94fa71f04ff2cdfc13, type: 2}
+  - {fileID: 11400000, guid: eedcaf0334a466f42908b82424c05f06, type: 2}
+  - {fileID: 11400000, guid: c25beeef9c7d84a4c9fd57a9df086d9f, type: 2}
+  - {fileID: 11400000, guid: 0eae91f4f917b6f49b54717a4f5755bb, type: 2}

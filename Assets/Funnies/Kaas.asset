@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 402be67b424b80c49b6500b6b7694cbb, type: 3}
-  m_Name: New Funny
+  m_Name: Kaas
   m_EditorClassIdentifier: 
-  <FunnyName>k__BackingField: 
-  <FunnyIcon>k__BackingField: {fileID: 0}
-  <FunnyCursorIcon>k__BackingField: {fileID: 0}
-  <FunnyPrefab>k__BackingField: {fileID: 0}
+  <IsSpeechBubble>k__BackingField: 0
+  <FunnyName>k__BackingField: Kaas
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 762b6112b4abad545ab55ce66f98efc6, type: 3}
