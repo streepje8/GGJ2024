@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,6 +29,10 @@ public class MainMenuScreen : MonoBehaviour
     public async Task HostAsync()
     {
         await networking.HostAsync();
+        await networking.ConnectToServerAsync("127.0.0.1:7777").ContinueWith(t =>
+        {
+            if (t.IsFaulted) throw t.Exception ?? new Exception("jldfhbglfjkgfsjhlg");
+        });
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
     

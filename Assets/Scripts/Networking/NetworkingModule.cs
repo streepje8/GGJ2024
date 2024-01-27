@@ -68,7 +68,7 @@ public class NetworkingModule : PersistentObject
     public bool YeeterSetup { get; private set; } = false;
     public string LobbyName { get; private set; } = "Unknown Host";
     
-    public static int broadcastPort = 440;
+    public static int broadcastPort = 7778;
     private UdpClient? broadcastYeeter;
     private UdpClient? broadcastYoinker;
     private static string ip = "err";
@@ -121,7 +121,7 @@ public class NetworkingModule : PersistentObject
     {
         int count = 0;
         isYoinking = true;
-        if(broadcastYoinker == null) broadcastYoinker = new UdpClient(440);
+        if(broadcastYoinker == null) broadcastYoinker = new UdpClient(7778);
 #pragma warning disable CS4014
         YoinkBroadcasts(broadcastYoinker, (bytesYoinked) =>
         {
@@ -169,7 +169,7 @@ public class NetworkingModule : PersistentObject
     {
         if (networkMode != NetworkMode.Unknown) throw new Exception("Goofy af network mode found, should not happen.");
         networkMode = NetworkMode.Host;
-        Server.Start(80, 5);
+        Server.Start(7777, 5);
         ServerIsRunning = true;
         if(broadcastYeeter == null) broadcastYeeter = new UdpClient(21);
         if (!IsYeeting)
@@ -215,7 +215,7 @@ public class NetworkingModule : PersistentObject
     public async Task ConnectToServerAsync(string ip)
     {
         if (networkMode == NetworkMode.Unknown) networkMode = NetworkMode.Client;
-        Client.Connect($"{ip}:{80}");
+        Client.Connect($"{ip}:{7777}");
         ClientIsRunning = true;
     }
 }
