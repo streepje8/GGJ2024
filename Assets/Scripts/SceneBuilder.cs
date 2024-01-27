@@ -106,6 +106,8 @@ public class SceneBuilder : MonoBehaviour
 
     public void CameraFunc()
     {
+        SelectedFunny?.Deselect();
+        SelectedFunny = null;
         RenderTexture rend = new RenderTexture(1920, 1080, 1);
         SetFrame(0);
         Camera.main.targetTexture = rend;
