@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuScreen : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class MainMenuScreen : MonoBehaviour
     public async Task HostAsync()
     {
         await networking.HostAsync();
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
     
     public void Join()
