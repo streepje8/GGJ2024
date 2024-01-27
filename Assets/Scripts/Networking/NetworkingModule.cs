@@ -202,7 +202,8 @@ public class NetworkingModule : PersistentObject
 
     public async Task ConnectToServerAsync(string ip)
     {
+        if (networkMode == NetworkMode.Unknown) networkMode = NetworkMode.Client;
         Client.Connect($"{ip}:{7777}");
-        
+        ClientIsRunning = true;
     }
 }
