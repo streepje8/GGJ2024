@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Mirror
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Mirror
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 3b478aa02e0a34245bfb144b66ecd74c, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Baby
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Baby
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: cd9be260c2baa2447abd3ad39006282a, type: 3}

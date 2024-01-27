@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Onion
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Onion
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 038ddbc49eb90f7448444a5bd288f546, type: 3}

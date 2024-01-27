@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Gravestone
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Gravestone
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: b2e0d7f7d2e1a9341b0e78a4710b7248, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Jar
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Jar
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 709e722d903f2224caf45f01c796e157, type: 3}

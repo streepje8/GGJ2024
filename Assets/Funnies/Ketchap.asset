@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ketchap
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Ketchap
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: b30e43ee4db42ec4cafa318bbc1370e2, type: 3}

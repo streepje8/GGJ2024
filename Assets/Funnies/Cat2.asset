@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cat2
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Cat2
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 904e1aade92bbf140a3c6381055fb44e, type: 3}

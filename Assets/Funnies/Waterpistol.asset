@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Waterpistol
   m_EditorClassIdentifier: 
   <IsSpeechBubble>k__BackingField: 0
-  <FunnyName>k__BackingField: 
-  <FunnyArt>k__BackingField: {fileID: 0}
+  <FunnyName>k__BackingField: Waterpistol
+  <FunnyArt>k__BackingField: {fileID: 21300000, guid: 29201a0c91651854a9b12f79624c14e3, type: 3}
