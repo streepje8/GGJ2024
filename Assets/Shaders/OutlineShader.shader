@@ -80,7 +80,7 @@ Shader "Sprites/Outline"
             {
                 fixed4 c = SampleSpriteTexture(IN.texcoord) * IN.color;
                 c.rgb *= c.a;
-            	float outline = sobel(_MainTex, float2(IN.texcoord));
+            	float outline = sobel(_MainTex, float2(IN.texcoord)) > 0.99f;
                 if(outline) c.rgba = _OutlineColor;
                 return c;
             }
