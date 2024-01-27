@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+// ReSharper disable Unity.NoNullPropagation
 
 public class SceneBuilder : MonoBehaviour
 {
@@ -69,14 +70,14 @@ public class SceneBuilder : MonoBehaviour
         if(funny != null)funny.Select();
     }
 
-    public void MoveUp() => SelectedFunny.Nudge(Vector3.up);
-    public void MoveRight() => SelectedFunny.Nudge(Vector3.right);
-    public void MoveDown() => SelectedFunny.Nudge(Vector3.down);
-    public void MoveLeft() => SelectedFunny.Nudge(Vector3.left);
-    public void RotateLeft() => SelectedFunny.RotateLeft();
-    public void RotateRight() => SelectedFunny.RotateRight();
-    public void ZoomIn() => SelectedFunny.ZoomIn();
-    public void ZoomOut() => SelectedFunny.ZoomOut();
+    public void MoveUp() => SelectedFunny?.Nudge(Vector3.up);
+    public void MoveRight() => SelectedFunny?.Nudge(Vector3.right);
+    public void MoveDown() => SelectedFunny?.Nudge(Vector3.down);
+    public void MoveLeft() => SelectedFunny?.Nudge(Vector3.left);
+    public void RotateLeft() => SelectedFunny?.RotateLeft();
+    public void RotateRight() => SelectedFunny?.RotateRight();
+    public void ZoomIn() => SelectedFunny?.ZoomIn();
+    public void ZoomOut() => SelectedFunny?.ZoomOut();
 
     public void OpenDrawer()
     {
