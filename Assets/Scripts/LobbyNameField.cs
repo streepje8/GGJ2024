@@ -16,9 +16,17 @@ public class LobbyNameField : MonoBehaviour
         nameField = GetComponent<TMP_InputField>();
         nameField.onValueChanged.AddListener(ChangeName);
     }
-    
+
+    private void FixedUpdate()
+    {
+        if (networking.networkMode != NetworkMode.Host)
+        {
+            nameField.SetTextWithoutNotify(networking.ReceivedLobbyName);
+        }
+    }
+
     private void ChangeName(string newName)
     {
-        networking.SetLobbyName(newName);
+        if (networking.networkMode == NetworkMode.Host) networking.SetLobbyName(newName);
     }
 }

@@ -5,5 +5,5 @@ using UnityEngine;
 public class FunnyPrompts : ScriptableObject
 {
     [field: SerializeField]
-    public List<string> Prompts { get; private set; } = new List<string>();
+    public List<string> Prompts { get; private set; } = new List<string> { "Falling", "Booming", "Climbing", "Bruh", "Fruit", "Meeting", "Seeing", "Love", "Farts", "Woopsies", "Poopsies", "Schmingus", "Amongus", "What?", "Technology", "Silly", "Accident", "On purpose", "Me", "Someone else", "Sarcasm", "Stinky", "Gobble", "You", "Food", "Together", "Their fault", "My bad", "Loud", "Silent", "Dr. Doctor", "Mr. Stacks", "Bozo Bumpkin", "D. (detective)", "Pablo" };
 }

@@ -27,6 +27,7 @@ public class ServerListing : MonoBehaviour
         {
             if (t.IsFaulted) throw t.Exception ?? new Exception("jldfhbglfjkgfsjhlg");
         });
+        networking.ReceivedLobbyName = hostname;
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
     
