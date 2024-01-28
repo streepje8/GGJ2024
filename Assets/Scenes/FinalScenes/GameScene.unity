@@ -2158,6 +2158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reviewscene
       objectReference: {fileID: 0}
+    - target: {fileID: 2576254743986929687, guid: fe72451b19f3a984f9a6db0b995a241d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4556631285439714109, guid: fe72451b19f3a984f9a6db0b995a241d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2339,7 +2343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1732483531
 RectTransform:
   m_ObjectHideFlags: 0

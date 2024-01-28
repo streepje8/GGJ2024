@@ -13,6 +13,7 @@ public class LobbyNameField : MonoBehaviour
             return;
         }
         networking = net;
+        nameField = GetComponent<TMP_InputField>();
         nameField.onValueChanged.AddListener(ChangeName);
     }
     
