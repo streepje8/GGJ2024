@@ -15,7 +15,7 @@ public class LobbyNameField : MonoBehaviour
         networking = net;
         nameField.onValueChanged.AddListener(ChangeName);
     }
-
+    
     private void ChangeName(string newName)
     {
         networking.SetLobbyName(newName);
