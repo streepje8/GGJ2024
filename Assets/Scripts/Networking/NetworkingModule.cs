@@ -44,6 +44,13 @@ public class NetworkingModule : PersistentObject
 {
     public override string ID => "Networking";
     public static int PLAYERCOUNT_CLIENT = 0;
+    
+    [MessageHandler(1)]
+    private static void ClientJoinMessage(Message message)
+    {
+        PLAYERCOUNT_CLIENT = message.GetInt();
+    }
+    
     public int PLAYERCOUNT_SERVER => Server.ClientCount;
 
     public int PLAYERCOUNT
@@ -82,8 +89,12 @@ public class NetworkingModule : PersistentObject
     public override void Create()
     {
         RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
-        Client.ClientConnected += (e, args) => PLAYERCOUNT_CLIENT++;
-        Client.ClientDisconnected += (e, args) => PLAYERCOUNT_CLIENT--;
+        Server.ClientConnected += (e, args) =>
+        {
+            Message mes = Message.Create(MessageSendMode.Reliable,1);
+            mes.Add(Server.ClientCount);
+            Server.SendToAll(mes);
+        };
     }
 
     private void OnApplicationQuit()
