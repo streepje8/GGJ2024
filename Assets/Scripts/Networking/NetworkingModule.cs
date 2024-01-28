@@ -44,21 +44,18 @@ public class NetworkingModule : PersistentObject
 {
     public override string ID => "Networking";
     public static int PLAYERCOUNT_CLIENT = 0;
-    
+
     [MessageHandler(1)]
     private static void ClientJoinMessage(Message message)
     {
         PLAYERCOUNT_CLIENT = message.GetInt();
     }
-    
+
     public int PLAYERCOUNT_SERVER => Server.ClientCount;
 
     public int PLAYERCOUNT
     {
-        get
-        {
-            return (networkMode == NetworkMode.Host) ? PLAYERCOUNT_SERVER : PLAYERCOUNT_CLIENT;
-        }
+        get { return (networkMode == NetworkMode.Host) ? PLAYERCOUNT_SERVER : PLAYERCOUNT_CLIENT; }
     }
 
     public override int ExecutionID => -1;
@@ -74,7 +71,7 @@ public class NetworkingModule : PersistentObject
     public bool IsYeeting { get; private set; } = false;
     public bool YeeterSetup { get; private set; } = false;
     public string LobbyName { get; private set; } = "Unknown Host";
-    
+
     public static int broadcastPort = 7778;
     private UdpClient? broadcastYeeter;
     private UdpClient? broadcastYoinker;
@@ -85,13 +82,13 @@ public class NetworkingModule : PersistentObject
     private int gotPlayerCount = 0;
     private string gotHostName = "";
     private string gotIp = "";
-    
+
     public override void Create()
     {
         RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
         Server.ClientConnected += (e, args) =>
         {
-            Message mes = Message.Create(MessageSendMode.Reliable,1);
+            Message mes = Message.Create(MessageSendMode.Reliable, 1);
             mes.Add(Server.ClientCount);
             Server.SendToAll(mes);
         };
@@ -111,8 +108,13 @@ public class NetworkingModule : PersistentObject
         IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
         return host.AddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
     }
-    
-    public override void FixedUpdate()
+
+    public void SetLobbyName(string newName)
+    {
+        LobbyName = newName;
+    }
+
+public override void FixedUpdate()
     {
         switch (networkMode)
         {
