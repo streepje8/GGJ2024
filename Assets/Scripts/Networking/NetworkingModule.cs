@@ -71,6 +71,7 @@ public class NetworkingModule : PersistentObject
     public bool IsYeeting { get; private set; } = false;
     public bool YeeterSetup { get; private set; } = false;
     public string LobbyName { get; private set; } = "Unknown Host";
+    public string ReceivedLobbyName { get; set; } = "";
 
     public static int broadcastPort = 7778;
     private UdpClient? broadcastYeeter;
@@ -230,5 +231,91 @@ public override void FixedUpdate()
         if (networkMode == NetworkMode.Unknown) networkMode = NetworkMode.Client;
         Client.Connect($"{ip}:{7777}");
         ClientIsRunning = true;
+    }
+
+    public void SubmitFrames(List<byte[]> images)
+    {
+        Message payload = Message.Create(MessageSendMode.Reliable, 3);
+        string guid = Guid.NewGuid().ToString();
+        payload.Add(guid);
+        payload.Add((byte)0); //NEW PAYLOAD
+        Client.Send(payload);
+        int img = 0;
+        foreach (var image in images)
+        {
+            int bufferSize = 700;
+            for (int i = 0; i < image.Length; i += bufferSize)
+            {
+                int remainingLength = Math.Min(bufferSize, image.Length - i);
+                byte[] buffer = new byte[remainingLength];
+                Array.Copy(image, i, buffer, 0, remainingLength);
+
+                Message imageData = Message.Create(MessageSendMode.Reliable, 3);
+                imageData.Add(guid);
+                imageData.Add((byte)1); // Continue PAYLOAD
+                imageData.Add((byte)img);
+                imageData.Add(buffer);
+                Client.Send(imageData);
+            }
+
+            Message endImg = Message.Create(MessageSendMode.Reliable, 3);
+            endImg.Add(guid);
+            endImg.Add((byte)2); // Image End PAYLOAD
+            endImg.Add((byte)img);
+            Client.Send(endImg);
+
+            img++;
+        }
+        SendEndDelayed(guid).ContinueWith(t =>
+        {
+            if (t.IsFaulted) throw t.Exception ?? new Exception("x_x");
+        });
+    }
+
+    private async Task SendEndDelayed(string guid)
+    {
+        await Task.Delay(6000);
+        Message endTotal = Message.Create(MessageSendMode.Reliable, 3);
+        endTotal.Add(guid);
+        endTotal.Add((byte)3); //End PAYLOAD
+        Client.Send(endTotal);
+    }
+
+    public static Dictionary<string, List<List<byte>>> images = new Dictionary<string, List<List<byte>>>();
+
+    [MessageHandler(3)]
+    private static void OnReceivePayload(ushort fromClient,Message message)
+    {
+        string clientGuid = message.GetString();
+        switch ((int)message.GetByte())
+        {
+            case 0: //NEW PAYLOAD
+                images.Add(clientGuid, new List<List<byte>>() { new(), new(), new()});
+                break;
+            case 1: //Continue PAYLOAD
+                int img = (int)message.GetByte();
+                List<List<byte>> imgs = images[clientGuid];
+                List<byte> current = imgs[img];
+                current.AddRange(message.GetBytes());
+                imgs[img] = current;
+                images[clientGuid] = imgs;
+                break;
+            case 2: //Image End PAYLOAD
+
+                break;
+            case 3: //End PAYLOAD
+                List<List<byte>> yoinked = images[clientGuid];
+                images.Remove(clientGuid);
+                Texture2D texA = new Texture2D(2, 2);
+                texA.LoadImage(yoinked[0].ToArray());
+                Texture2D texB = new Texture2D(2, 2);
+                texB.LoadImage(yoinked[1].ToArray());
+                Texture2D texC = new Texture2D(2, 2);
+                texC.LoadImage(yoinked[2].ToArray());
+                GamejamSolutions.instance.textures.Add(new List<Texture2D>() {texA,texB,texC});
+                Debug.Log("NICE");
+                GamejamSolutions.instance.OnReceive();
+                break;
+        }
     }
 }

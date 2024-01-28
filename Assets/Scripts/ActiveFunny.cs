@@ -72,7 +72,7 @@ public class ActiveFunny : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     private void Update()
     {
-        if (IsBeeingHovered && Input.GetMouseButton(1))
+        if (IsSelected && IsBeeingHovered && Input.GetMouseButton(1))
         {
             SceneBuilder.SelectFunny(null);
             Destroy(gameObject);

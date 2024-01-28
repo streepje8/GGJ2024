@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class SceneBuilder : MonoBehaviour
     public int ActiveFrameIndex { get; private set; } = 0;
 
     private static SceneBuilder instance;
+    private NetworkingModule network;
+    private UICanvas canvas;
 
     private void Awake()
     {
@@ -28,6 +31,13 @@ public class SceneBuilder : MonoBehaviour
         ActiveFrameIndex = 0;
         FrameB.gameObject.SetActive(false);
         FrameC.gameObject.SetActive(false);
+        if (!PersistentGameState.TryFindObject("Networking", out NetworkingModule net))
+        {
+            enabled = false;
+            return;
+        }
+        network = net;
+        canvas = GetComponentInParent<UICanvas>(true);
     }
 
     public void SetFrame(int frame)
@@ -106,6 +116,8 @@ public class SceneBuilder : MonoBehaviour
 
     public void CameraFunc()
     {
+        Drawer.gameObject.SetActive(false);
+        List<byte[]> images = new List<byte[]>();
         SelectedFunny?.Deselect();
         SelectedFunny = null;
         RenderTexture rend = new RenderTexture(1920, 1080, 1);
@@ -120,6 +132,7 @@ public class SceneBuilder : MonoBehaviour
         bytes = tex.EncodeToPNG();
         string path = Path.Combine(Application.persistentDataPath, "FrameA.png");
         System.IO.File.WriteAllBytes(path, bytes);
+        images.Add(bytes);
         SetFrame(1);
         Camera.main.targetTexture = rend;
         Camera.main.Render();
@@ -128,6 +141,7 @@ public class SceneBuilder : MonoBehaviour
         tex.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
         RenderTexture.active = null;
         bytes = tex.EncodeToPNG();
+        images.Add(bytes);
         path = Path.Combine(Application.persistentDataPath, "FrameB.png");
         System.IO.File.WriteAllBytes(path, bytes);
         SetFrame(2);
@@ -140,8 +154,12 @@ public class SceneBuilder : MonoBehaviour
         bytes = tex.EncodeToPNG();
         path = Path.Combine(Application.persistentDataPath, "FrameC.png");
         System.IO.File.WriteAllBytes(path, bytes);
+        images.Add(bytes);
         rend.Release();
         Camera.main.targetTexture = null;
+        Drawer.gameObject.SetActive(true);
+        canvas.ShowScreen("submit");
+        network.SubmitFrames(images);
     }
     
     private void Update()
