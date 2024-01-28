@@ -57,6 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4048822592333499390}
   - component: {fileID: 1861327675730355546}
+  - component: {fileID: 1874810671993114347}
   m_Layer: 0
   m_Name: PersistentData
   m_TagString: Untagged
@@ -95,6 +96,21 @@ MonoBehaviour:
   <FunnyPrompts>k__BackingField: {fileID: 11400000, guid: 6232ca99840a1c142891d6fa7a6f3420, type: 2}
   <FunnyDefaultMaterial>k__BackingField: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   <FunnySelectedMaterial>k__BackingField: {fileID: 2100000, guid: c2e90a97bfff8794c9d8670262bfd012, type: 2}
+--- !u!114 &1874810671993114347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873579056295768312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1e8f33245046d418ad3367e7d3b46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temp: {fileID: 0}
+  temp2: {fileID: 0}
+  temp3: {fileID: 0}
 --- !u!1 &5012434948464779894
 GameObject:
   m_ObjectHideFlags: 0
