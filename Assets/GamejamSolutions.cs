@@ -17,12 +17,23 @@ public class GamejamSolutions : MonoBehaviour
         ReceivedClients++;
         if (ReceivedClients >= FindObjectOfType<NetworkingModule>().PLAYERCOUNT - 1)
         {
-            //All players handed in. Do a Vote
             FindObjectOfType<UICanvas>().ShowScreen("voting");
+            ReviewScreen.instance.HandOff(textures);
         }
     }
-    
-    
+
+
+    private void OnApplicationQuit()
+    {
+        foreach (var texture2Ds in textures)
+        {
+            foreach (var texture2D in texture2Ds)
+            {
+                Destroy(texture2D);
+            }
+        }
+    }
+
     private void Awake()
     {
         if(instance == null) instance = this;
@@ -33,13 +44,6 @@ public class GamejamSolutions : MonoBehaviour
         if (instance == this)
         {
             instance = null;
-        }
-        foreach (var texture2Ds in textures)
-        {
-            foreach (var texture2D in texture2Ds)
-            {
-                Destroy(texture2D);
-            }
         }
     }
 }
